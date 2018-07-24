@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,8 +32,12 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText);
         speak = findViewById(R.id.speak);
 
+        CompleteSystemDbAccess a = new CompleteSystemDbAccess(getApplicationContext());
+        a.open();
+        ArrayList<String> s = a.getComplete("การ");
+        Toast.makeText(MainActivity.this,s.get(0).toString(),Toast.LENGTH_SHORT);
 
-
+        a.close();
 
     }
     private TextWatcher myTextWatcher;
@@ -51,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
                 if(editText.length() > 0 && result.size() == 0){
+
 
                 }
             }
