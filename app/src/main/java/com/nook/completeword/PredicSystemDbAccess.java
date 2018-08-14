@@ -23,7 +23,7 @@ public class PredicSystemDbAccess {
     }
     public ArrayList<String> getPredict(String s){
         ArrayList<String> listWord = new ArrayList<>();
-        String sql = "SELECT DISTINCT MEMBERS FROM BEST_PREDICT_" + LangCheck.getDBByKeyTH(s)+ " WHERE SENSEGROUP LIKE '" + s + "' ORDER BY FREQ DESC LIMIT 50";
+        String sql = "SELECT DISTINCT MEMBERS FROM BEST_PREDICT_" + LangCheck.getDBByKeyTH(s)+ " WHERE SENSEGROUP LIKE '" + s + "' ORDER BY FREQ DESC LIMIT 6";
         c = db.rawQuery(sql,null);
         c.moveToFirst();
         while (!c.isAfterLast()){

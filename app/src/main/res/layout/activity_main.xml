@@ -5,12 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="176dp"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/outPut"
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textColor="@android:color/background_dark"
+            android:textSize="28sp" />
 
         <EditText
             android:id="@+id/editText"
@@ -32,6 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="speak"
                 android:text="@string/read" />
 
             <Button
@@ -39,31 +50,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="delWord"
+                android:text="DELETE" />
         </LinearLayout>
 
     </LinearLayout>
 
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="115dp">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <android.support.v7.widget.GridLayout
-            android:id="@+id/gridContain"
+            android:id="@+id/gridContainBT"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            app:columnCount="3">
 
-            <Button
-                android:id="@+id/button13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
         </android.support.v7.widget.GridLayout>
     </HorizontalScrollView>
 

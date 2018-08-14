@@ -26,7 +26,7 @@ public class CompleteSystemDbAccess {
 
     public ArrayList<String> getComplete(String s){
         ArrayList<String> listWord = new ArrayList<>();
-        String sql = "SELECT DISTINCT SENSEGROUP FROM BEST_COMPLETE_"+ LangCheck.getDBByKeyTH(s) + " WHERE SENSEGROUP LIKE '" + s + "%' ORDER BY FREQ DESC LIMIT 50";
+        String sql = "SELECT DISTINCT SENSEGROUP FROM BEST_COMPLETE_"+ LangCheck.getDBByKeyTH(s) + " WHERE SENSEGROUP LIKE '" + s + "%' ORDER BY FREQ DESC LIMIT 6";
         c = db.rawQuery(sql,null);
         c.moveToFirst();
         while (!c.isAfterLast()){
