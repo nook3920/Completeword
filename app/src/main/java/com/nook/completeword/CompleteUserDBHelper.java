@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
+import android.text.TextUtils;
 import java.util.ArrayList;
 
 public class CompleteUserDBHelper extends SQLiteOpenHelper  {
@@ -21,12 +21,14 @@ public class CompleteUserDBHelper extends SQLiteOpenHelper  {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         for(int i = 0; i<=9;i++){
-            String create_table = "CREATE TABLE BEST_COMPLETE_TH0"+ i +"('ID' INTEGER NOT NULL,'SENSEGROUP' VARCHAR(1000) NOT NULL,'FREQ' INTEGER NOT NULL DEFAULT 0,PRIMARY KEY ('ID' ASC))";
+            String create_table = "CREATE TABLE IF NOT EXISTS BEST_COMPLETE_TH0"+ i +" ('ID' INTEGER NOT NULL,'SENSEGROUP' VARCHAR(1000) NOT NULL,'FREQ' INTEGER NOT NULL DEFAULT 0,PRIMARY KEY ('ID' ASC))";
             sqLiteDatabase.execSQL(create_table);
+            sqLiteDatabase.rawQuery(create_table, null);
         }
         for(int i = 10; i <= 52; i++){
-            String create_table = "CREATE TABLE BEST_COMPLETE_TH"+ i +"('ID' INTEGER NOT NULL,'SENSEGROUP' VARCHAR(1000) NOT NULL,'FREQ' INTEGER NOT NULL DEFAULT 0,PRIMARY KEY ('ID' ASC))";
+            String create_table = "CREATE TABLE IF NOT EXISTS BEST_COMPLETE_TH"+ i +" ('ID' INTEGER NOT NULL,'SENSEGROUP' VARCHAR(1000) NOT NULL,'FREQ' INTEGER NOT NULL DEFAULT 0,PRIMARY KEY ('ID' ASC))";
             sqLiteDatabase.execSQL(create_table);
+            //sqLiteDatabase.rawQuery(create_table, null);
         }
         Log.d("SQL", "DB Created");
     }
@@ -70,7 +72,7 @@ public class CompleteUserDBHelper extends SQLiteOpenHelper  {
         }
         Log.d("SQL2",sql);
         c = db.rawQuery(sql, null);
-
+        db.close();
     }
 
 

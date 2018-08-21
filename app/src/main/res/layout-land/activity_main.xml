@@ -61,17 +61,68 @@
 
     </LinearLayout>
 
-    <HorizontalScrollView
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="wrap_content">
 
-        <android.support.v7.widget.GridLayout
-            android:id="@+id/gridContainBT"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:columnCount="3">
+            android:layout_height="wrap_content">
 
-        </android.support.v7.widget.GridLayout>
-    </HorizontalScrollView>
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="207dp"
+                android:layout_height="match_parent"
+                android:text="TextView1"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="193dp"
+                android:layout_height="wrap_content"
+                android:text="TextView2"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="191dp"
+                android:layout_height="wrap_content"
+                android:text="TextView3"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="58dp">
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView4"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="179dp"
+                android:layout_height="wrap_content"
+                android:text="TextView5"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView6"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+        </TableRow>
+
+    </TableLayout>
 
 </LinearLayout>
