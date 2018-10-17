@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:layout_columnWeight="1"
     android:layout_gravity="fill"
-    android:backgroundTint="@android:color/darker_gray"
     android:textAllCaps="false"
     android:textColor="@android:color/black"
     android:textSize="26sp" />
